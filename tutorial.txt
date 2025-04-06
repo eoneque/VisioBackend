@@ -1,0 +1,196 @@
+download prerequisites
+
+SERVER WILL NOT WORK IF THE DOWNLOAD AND THE ENV
+IS NOT PROPERLY CONFIGURED
+
+
+#how to locate
+============= environment variables ==============
+Windows + R
+type "sysdm.cpl" to open the ENV variables
+
+go to "advanced" then click "environment variables"
+
+click "path" then "edit"
+
+click "new" then paste the path of the folder.
+===================================================
+
+
+
+=================== how to check the installation ? ======================
+
+open cmd  (COMMAND PROMPT)
+
+place command, for example "tesseract --version"
+
+
+should look like this 
+
+C:\Users\Xemto>tesseract --version
+tesseract v5.5.0.20241111
+ leptonica-1.85.0
+  libgif 5.2.2 : libjpeg 8d (libjpeg-turbo 3.0.4) : libpng 1.6.44 : libtiff 4.7.0 : zlib 1.3.1 : libwebp 1.4.0 : libopenjp2 2.5.2
+ Found AVX2
+ Found AVX
+ Found FMA
+ Found SSE4.1
+ Found libarchive 3.7.7 zlib/1.3.1 liblzma/5.6.3 bz2lib/1.0.8 liblz4/1.10.0 libzstd/1.5.6
+ Found libcurl/8.11.0 Schannel zlib/1.3.1 brotli/1.1.0 zstd/1.5.6 libidn2/2.3.7 libpsl/0.21.5 libssh2/1.11.0
+
+
+
+==============================================================
+
+ffmpeg
+https://github.com/BtbN/FFmpeg-Builds/releases
+ffmpeg-master-latest-win64-gpl.zip
+139 MB
+13 hours ago
+
+
+-add it to environment variables
+
+check ffmpeg
+
+#ffmpeg --version'
+
+==============================================================
+
+tesseract
+https://github.com/UB-Mannheim/tesseract/wiki
+-add it to environment variables
+
+check tesseract 
+
+
+#tesseract --version
+
+==============================================================
+
+
+Python
+https://www.python.org/downloads/release/python-3110/
+
+check python --version
+
+==============================================================
+
+download 
+c++ distributive
+https://visualstudio.microsoft.com/visual-cpp-build-tools/
+
+-add it to environment variables
+
+==============================================================
+
+download CMake
+cmake-4.0.0-rc4-windows-x86_64
+https://cmake.org/download/
+
+
+-add it to environment variables
+
+check cmake
+
+
+#cmake --version
+==============================================================
+
+// env variables path should look like this
+C:\ngrok
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\CMake
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.43.34808\bin\Hostx64\x64
+C:\Program Files\Tesseract-OCR
+C:\ffmpeg
+
+============================================================================
+
+
+======================= NGROK SET UP ========================================
+
+download ngrok === https://ngrok.com/downloads/windows?tab=download
+and register 
+
+after downloading, locate the file and copy as path
+
+then register it in the env variables
+
+ngrok config add-authtoken 2teqiGpwwek4Atig8N53vyNgPmL_2hdtANf6wopb5QikHMnH7
+
+==============================================================================
+
+
+
+
+# Create virtual environment
+cd backend
+
+python -m venv myenv
+
+# Activate environment
+.\myenv\Scripts\activate
+
+
+
+--packages--
+pip install
+ fastapi 
+ uvicorn
+  numpy
+   supabase
+    pytesseract
+     opencv-python-headless
+      ultralytics 
+      deepface 
+      pillow inference-sdk
+openai-whisper
+
+
+
+
+
+
+
+
+=========== start the server===========================
+cd backend
+
+# Activate environment
+.\myenv\Scripts\activate
+
+uvicorn app:app --reload
+
+
+====================== START NGROK ===============================
+
+#if the fastAPI runs without the prbolem, navigate to your ngrok and run this
+
+ngrok http --url=close-exotic-cicada.ngrok-free.app 8000
+
+
+
+
+
+
+# front end 
+====================== how to run expo? ===========================
+
+cd client
+
+npm install
+
+npx expo start
+
+to view in your phone, download EXPO in google playstore then
+one the initialization of expo is succeeded  "npx expo start"
+
+it should return a QR code or link
+
+in your expo app, you can scan and you will be directed to the app
+
+!!!MAKE SURE THAT YOU HAVE THE SAME INTERNET CONNECTION (LAPTOP AND CELLPHONE)!!!!!
+
+!!!MAKE SURE THAT THE SERVER IS RUNNING WITH UVICORN AND NGROK!!!!
+
+========================================================

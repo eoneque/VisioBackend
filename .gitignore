@@ -1,0 +1,22 @@
+# Virtual environment
+venv/
+.env/
+ENV/
+
+# Python cache and build files
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# Dependency directories
+node_modules/
+uploads/
